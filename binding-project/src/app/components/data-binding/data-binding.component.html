@@ -1,0 +1,17 @@
+<h1>Data Binding</h1>
+
+<h2>Interpolation</h2>
+<div>{{ title }}</div>
+<!-- <div [innerText]="title"></div> -->
+
+<h2>Property binding</h2>
+<!-- <div>{{ url }}</div> -->
+<!-- <div><img src="{{ url }}" alt="xxx"></div> -->
+<div><img [src]="url" alt="xxx"></div>
+
+<h2>Event binding</h2>
+<button type="button" (click)="changeTitle()">Change the title</button>
+
+<h2>TwoWay Binding</h2>
+<div>{{ username }}</div>
+<div><input type="text" [(ngModel)]="username"></div>
