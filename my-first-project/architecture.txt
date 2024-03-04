@@ -1,0 +1,11 @@
+/src/
+|- app/
+  |- app.module
+  |- app.component
+  |- fist/
+  | |- first.module
+  | |- book/
+  | |  |- book.component
+  |- pizza
+    |- pizza.component
+  
