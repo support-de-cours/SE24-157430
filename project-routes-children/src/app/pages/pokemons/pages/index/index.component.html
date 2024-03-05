@@ -1,0 +1,26 @@
+<p>Pokedex works!</p>
+
+
+<card *ngFor="let pokemon of pokemons" [item]="pokemon"></card>
+
+<!-- 
+<div *ngFor="let pokemon of pokemons" class="card">
+    <div class="card-header">{{ pokemon.name }}</div>
+    <div class="card-body">Body</div>
+    <hr>
+</div>
+-->
+
+<!-- 
+@for (pokemon of pokemons; track pokemon)
+{
+    <div class="card">
+        <div class="card-header">{{ pokemon.name }}</div>
+        <div class="card-body">Body</div>
+        <hr>
+    </div>
+}
+
+
+{{ pokemons | json }}
+-->

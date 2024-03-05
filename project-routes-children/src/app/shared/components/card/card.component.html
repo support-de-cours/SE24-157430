@@ -1,0 +1,10 @@
+<div class="card">
+    <div class="card-header">{{ item.name }}</div>
+    <div class="card-body">
+        {{ item.description }}
+
+        <a [routerLink]="['/pokedex', item.id]">plus ({{ item.id }})</a>
+
+    </div>
+    <hr>
+</div>

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './pages/homepage/homepage.component';
-import { IndexComponent as PokedexComponent } from './pages/pokemons/index/index.component';
+import { IndexComponent as PokedexComponent } from './pages/pokemons/pages/index/index.component';
 import { BooksIndexComponent } from './pages/books/index/index.component';
+import { DetailComponent } from './pages/pokemons/pages/detail/detail.component';
 
 const routes: Routes = [
   // Homepage
@@ -12,24 +13,9 @@ const routes: Routes = [
   },
 
 
-
-
-  // Liste des pokemons
-  {
-    path: 'pokedex',
-    component: PokedexComponent
-  },
-
-  // Detail d'un pokemon
-
-
-
-
-  
-
   // Livres
   {
-    path: 'book',
+    path: 'books',
     component: BooksIndexComponent
   },
 
