@@ -8,6 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class StoreService 
 {
   private _pokemons: BehaviorSubject<Pokemon[]> = new BehaviorSubject<Pokemon[]>([]);
+  private _pokemon: BehaviorSubject<Pokemon|null> = new BehaviorSubject<Pokemon|null>(null);
 
   public set addPokemon(pokemon: Pokemon)
   {
@@ -29,5 +30,23 @@ export class StoreService
   public get pokemons(): BehaviorSubject<Pokemon[]>
   {
     return this._pokemons;
+  }
+
+
+
+  /**
+   * Modifie l'etat de "_pokemon"
+   */
+  public set pokemon(pokemon: Pokemon|null)
+  {
+    this._pokemon.next(pokemon);
+  }
+
+  /**
+   * Recupere l'ete de _pokemon
+   */
+  public get pokemon(): BehaviorSubject<Pokemon|null>
+  {
+    return this._pokemon;
   }
 }

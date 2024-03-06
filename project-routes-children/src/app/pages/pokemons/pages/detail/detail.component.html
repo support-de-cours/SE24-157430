@@ -1,1 +1,7 @@
-<p>Poke detail works!</p>
+<ng-container *ngIf="!pokemon; else pokedata">Loadding...</ng-container>
+
+<ng-template #pokedata>
+    <h1>Pokemon : {{ pokemon?.name }}</h1>
+    <img [src]="pokemon?.illustration" alt="">
+</ng-template>
+

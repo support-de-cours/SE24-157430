@@ -9,7 +9,7 @@ import { StoreService } from './store.service';
 })
 export class apiService 
 {
-  private _pokemons: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  // private _pokemons: BehaviorSubject<any> = new BehaviorSubject<any>([]);
 
   constructor(
     private _http: HttpClient,
@@ -18,18 +18,19 @@ export class apiService
 
   public getAllPokemonApi()
   {
-    this._http.get("/api/v2/pokemon?limit=100000&offset=0").subscribe(response => {
-      const res = response as any;
-      const results: Pokemon[] = res.results.map((item: any) => {
+    this._http.get("/api/v2/pokemon?limit=100000&offset=0")
+      .subscribe(response => {
+        const res = response as any;
+        const results: Pokemon[] = res.results.map((item: any) => {
 
-        const id = Number(this._extraireIdDeUrl(item.url));
-        return {
-          id: id,
-          name: item.name,
-          description: item.url,
-          power: []
-        }
-      });
+          const id = Number(this._extraireIdDeUrl(item.url));
+          return {
+            id: id,
+            name: item.name,
+            description: item.url,
+            power: []
+          }
+        });
 
       this._store.pokemons = results;
     });
@@ -37,14 +38,26 @@ export class apiService
 
   public getOnePokemonApi(id: number)
   {
-    // /api/v2/pokemon/25
-    const url = `/api/v2/pokemon/${id}`;
+    // Reset le store Pokemon
+    this._store.pokemon = null;
 
-    this._http.get(url).subscribe(response => {
-      
-      console.log( response );
-      
-    });
+    // Appel de l'API
+    const url = `/api/v2/pokemon/${id}`;
+    this._http.get(url)
+      .subscribe( (response: any) => {
+        
+        // console.log( response );
+        const pokemon: Pokemon = {
+          id: response.id,
+          name: response.name,
+          illustration: response.sprites.other.home.front_default,
+          description: 'lorem pika pika',
+          power: []
+        }
+        
+        // Modifie le store pokemon
+        setTimeout(() => this._store.pokemon = pokemon, 3000);
+      });
   }
 
 
