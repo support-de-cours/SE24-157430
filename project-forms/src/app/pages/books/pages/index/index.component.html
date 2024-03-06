@@ -1,1 +1,16 @@
-<p>index works!</p>
+<h1>Nos Livres</h1>
+
+<ng-container *ngIf="(books?.length === 0); else showBooks">Loading...</ng-container>
+
+<ng-template #showBooks>
+
+    <div class="mb-3">
+        <a routerLink="/book" class="btn btn-primary">Ajouter un livre</a>
+    </div>
+
+    <div class="card" *ngFor="let book of books">
+        <div>Title : {{ book.title }}</div>
+        <div>Title : <span [innerText]="book.title"></span></div>
+    </div>
+
+</ng-template>

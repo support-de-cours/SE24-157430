@@ -1,1 +1,34 @@
-<p>create works!</p>
+<h1>Ajouter un livre</h1>
+
+<form [formGroup]="bookForm" (submit)="formSubmit()">
+
+    <div class="mb-3">
+        <label for="title">Titre du livre</label>
+        <input 
+            type="text" 
+            id="title" 
+            class="form-control" 
+            formControlName="title"
+            [ngClass]="{'is-invalid': bookForm.controls.title.touched && !bookForm.controls.title.valid}">
+        <p *ngIf="!bookForm.controls.title.valid" class="invalid-feedback">Le titre est obligatoire</p>
+    </div>
+
+    <div class="mb-3">
+        <label for="price">Prix du livre</label>
+        <input 
+            type="number" 
+            step="0.01" 
+            id="price" 
+            class="form-control" 
+            formControlName="price"
+            [ngClass]="{'is-invalid': bookForm.controls.price.touched && !bookForm.controls.price.valid}">
+        <p *ngIf="!bookForm.controls.price.valid" class="invalid-feedback">Le prix est obligatoire</p>
+    </div>
+
+    <button 
+        class="btn btn-success" 
+        type="submit"
+        [disabled]="bookForm.invalid"
+    >Ajouter le livre</button>
+
+</form>
