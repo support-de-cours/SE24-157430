@@ -1,0 +1,38 @@
+Pages (Metier de l'app)
+    > Homepage
+        > pages 
+            > Homepage
+        > homepage.module 
+        > homepage.route 
+    > Books
+        > pages
+            > Index
+            > Create
+            > Read
+            > Update
+            > Delete
+        > Services
+            > store
+            > crud
+        > Interfaces
+            > book
+        > book.module
+        > book.route
+
+Core (Algo commun à toute les apps)
+    > interceptors
+        > http.interceptor 
+        > error.interceptor
+    > guards
+        > admin.guard 
+        > yes.guard
+        > no.guard
+        > maybe.guard
+
+Shared
+    > components
+        > card
+        > link
+    > layout
+        > header
+        > footer
