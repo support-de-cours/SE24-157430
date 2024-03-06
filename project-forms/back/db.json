@@ -9,6 +9,11 @@
       "id": "2323",
       "title": "My second book",
       "price": 154
+    },
+    {
+      "id": "8184",
+      "title": "L'Odyssée Temporelle",
+      "price": 24.95
     }
   ]
 }

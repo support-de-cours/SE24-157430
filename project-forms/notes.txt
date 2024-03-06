@@ -1,3 +1,22 @@
+site.com/                   -> site.com/homepage
+site.com/homepage
+
+site.com/books              bookController->index
+site.com/book               bookController->create
+site.com/book/42            bookController->read
+site.com/book/42/edit       bookController->update 
+site.com/book/42/delete     bookController->delete
+
+site.com/?????
+
+site.com/books              index
+site.com/books/create       create
+site.com/books/42           read
+site.com/books/42/edit      update 
+site.com/books/4delete      delete
+
+
+
 Pages (Metier de l'app)
     > Homepage
         > pages 
